@@ -1,5 +1,6 @@
 module MiluJavaSample {
-	requires javafx.graphics;
+	requires java.sql;
+	requires transitive javafx.graphics;
 	requires javafx.controls;
 	
 	exports milu.fx.begin;
