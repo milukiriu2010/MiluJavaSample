@@ -18,7 +18,7 @@ import milu.db.DriverShim;
 // TNS名によるOracle接続
 // SQLでスキーマが保持しているテーブル一覧を取得
 // -----------------------------------------
-public class OracleConDynamic {
+public class Ora01 {
 	public static void main(String args[]){  
 		try{  
 			//step1 load the driver class

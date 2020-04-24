@@ -9,6 +9,10 @@ import com.google.gson.reflect.TypeToken;
 
 import milu.entity.TeamBaseBall;
 
+// -------------------------------------------
+// ・オブジェクトのリスト⇒JSONに変換
+// ・JSON⇒オブジェクトのリストに変換
+// -------------------------------------------
 public class Gson01 {
     public static void main(String[] args) {
         List<TeamBaseBall> list = new ArrayList<TeamBaseBall>();
