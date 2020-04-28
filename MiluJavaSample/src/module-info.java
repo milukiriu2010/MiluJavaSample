@@ -6,10 +6,16 @@ module MiluJavaSample {
 	requires javafx.controls;
 	requires javafx.fxml;
 	requires com.google.gson;
-	
+
 	exports milu.entity;
 	opens milu.entity to com.google.gson;
+
+	exports milu.entity.team;
+	opens milu.entity.team to com.google.gson;
 	
 	exports milu.fx.begin;
 	opens milu.fx.begin to javafx.graphics;
+	
+	exports milu.fx.combo;
+	opens milu.fx.combo to javafx.graphics;
 }

@@ -1,4 +1,4 @@
-package milu.entity;
+package milu.entity.team;
 
 import java.util.List;
 import java.util.ArrayList;
