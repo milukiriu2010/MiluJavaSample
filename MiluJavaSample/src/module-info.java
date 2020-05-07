@@ -6,6 +6,14 @@ module MiluJavaSample {
 	requires javafx.controls;
 	requires javafx.fxml;
 	requires com.google.gson;
+	requires poi;
+	//requires poi.ooxml;
+	
+	exports milu.db.oracle;
+	opens milu.db.oracle to javafx.graphics;
+	
+	exports milu.encrypt;
+	opens milu.encrypt to javafx.graphics;	
 
 	exports milu.entity;
 	opens milu.entity to com.google.gson;

@@ -32,7 +32,7 @@ public class ComboBox01 extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
-        stage.setTitle("ComboBoxSample");
+        stage.setTitle("ComboBox01");
         Scene scene = new Scene(new Group(), 450, 300);
         
         final ComboBox<String> emailComboBox = new ComboBox<String>();
