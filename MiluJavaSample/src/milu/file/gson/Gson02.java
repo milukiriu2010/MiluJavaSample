@@ -14,8 +14,8 @@ import com.google.gson.reflect.TypeToken;
 import milu.entity.Todo;
 
 // -------------------------------------------
-// ExposeƒAƒmƒe[ƒVƒ‡ƒ“‚ğg‚í‚È‚¢
-// EƒIƒuƒWƒFƒNƒg‚ÌƒŠƒXƒgËJSON‚É•ÏŠ·
+// Exposeã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ä½¿ã‚ãªã„
+// ãƒ»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒªã‚¹ãƒˆâ‡’JSONã«å¤‰æ›
 // -------------------------------------------
 public class Gson02 {
     private static class MyCustomExclusionStrategy implements ExclusionStrategy {
@@ -24,7 +24,7 @@ public class Gson02 {
                 return false;
         }
 
-        // ƒvƒ‰ƒCƒx[ƒg•Ï”changes‚Ì“à—e‚ÍAjson‚Éo—Í‚³‚ê‚È‚¢‚æ‚¤‚É‚µ‚Ä‚¢‚éB
+        // ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆå¤‰æ•°changesã®å†…å®¹ã¯ã€jsonã«å‡ºåŠ›ã•ã‚Œãªã„ã‚ˆã†ã«ã—ã¦ã„ã‚‹ã€‚
         public boolean shouldSkipField(FieldAttributes f) {
                 return (f.getDeclaringClass() == Todo.class && f.getName().equals("changes"));
         }

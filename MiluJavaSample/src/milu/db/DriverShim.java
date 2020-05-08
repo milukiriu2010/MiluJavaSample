@@ -9,7 +9,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 // -----------------------------------------------
-// JDBC Driverをダイナミックにロードする際利用するクラス
+// JDBC Driver繧偵ム繧､繝翫Α繝�繧ｯ縺ｫ繝ｭ繝ｼ繝峨☆繧矩圀蛻ｩ逕ｨ縺吶ｋ繧ｯ繝ｩ繧ｹ
 // -----------------------------------------------
 // http://www.kfu.com/~nsayer/Java/dyn-jdbc.html
 // -----------------------------------------------

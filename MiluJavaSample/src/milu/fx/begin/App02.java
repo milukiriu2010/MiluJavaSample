@@ -6,9 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
-//--------------------------------------------------------------
-//FlowPane‚Ì—ûK
-//--------------------------------------------------------------
+// --------------------------------------------------------------
+// FlowPaneã®ç·´ç¿’
+// --------------------------------------------------------------
 public class App02 extends Application {
 
 	public static void main(String[] args) {

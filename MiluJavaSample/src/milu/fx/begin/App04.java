@@ -11,7 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 // --------------------------------------------------------------
-// ƒ{ƒ^ƒ“ƒNƒŠƒbƒN‚ÌƒCƒxƒ“ƒg—ûK
+// ãƒœã‚¿ãƒ³ã‚¯ãƒªãƒƒã‚¯æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆç·´ç¿’
 // --------------------------------------------------------------
 // https://www.tuyano.com/index3?id=9306003&page=3
 // --------------------------------------------------------------
@@ -29,7 +29,7 @@ public class App04 extends Application {
         label = new Label("This is JavaFX!");
         field = new TextField();
         button = new Button("Click");
-        // ƒAƒNƒVƒ‡ƒ“ƒCƒxƒ“ƒgˆ—‚Ì‘g‚İ‚İ
+        // ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã‚¤ãƒ™ãƒ³ãƒˆå‡¦ç†ã®çµ„ã¿è¾¼ã¿
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {

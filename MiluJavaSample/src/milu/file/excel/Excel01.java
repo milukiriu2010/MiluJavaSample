@@ -11,7 +11,7 @@ import java.util.Date;
 //import org.apache.poi.xssf.streaming.SXSSFSheet;
 //import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
-// ˆÈ‰º‚ÌƒGƒ‰[‚ª‚Å‚ÄƒRƒ“ƒpƒCƒ‹‚Å‚«‚È‚¢
+// ä»¥ä¸‹ã®ã‚¨ãƒ©ãƒ¼ãŒã§ã¦ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã§ããªã„
 // Description Resource Path Location Type The package org.apache.poi.ss.usermodel is accessible from more than one module: poi, poi.ooxml
 public class Excel01 {
     public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -24,12 +24,12 @@ public class Excel01 {
             book = new SXSSFWorkbook();
 
             Font font = book.createFont();
-            font.setFontName("‚l‚r ƒSƒVƒbƒN");
+            font.setFontName("ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯");
             font.setFontHeightInPoints((short) 9);
 
             DataFormat format = book.createDataFormat();
 
-            //ƒwƒbƒ_•¶š—ñ—p‚ÌƒXƒ^ƒCƒ‹
+            //ãƒ˜ãƒƒãƒ€æ–‡å­—åˆ—ç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«
             CellStyle style_header = book.createCellStyle();
             style_header.setBorderBottom(BorderStyle.THIN);
             XLSXWriteTest.setBorder(style_header, BorderStyle.THIN);
@@ -38,48 +38,48 @@ public class Excel01 {
             style_header.setVerticalAlignment(VerticalAlignment.TOP);
             style_header.setFont(font);
 
-            //•¶š—ñ—p‚ÌƒXƒ^ƒCƒ‹
+            //æ–‡å­—åˆ—ç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«
             CellStyle style_string = book.createCellStyle();
             XLSXWriteTest.setBorder(style_string, BorderStyle.THIN);
             style_string.setVerticalAlignment(VerticalAlignment.TOP);
             style_string.setFont(font);
 
-            //‰üs‚ª“ü‚Á‚½•¶š—ñ—p‚ÌƒXƒ^ƒCƒ‹
+            //æ”¹è¡ŒãŒå…¥ã£ãŸæ–‡å­—åˆ—ç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«
             CellStyle style_string_wrap = book.createCellStyle();
             XLSXWriteTest.setBorder(style_string_wrap, BorderStyle.THIN);
             style_string_wrap.setVerticalAlignment(VerticalAlignment.TOP);
             style_string_wrap.setWrapText(true);
             style_string_wrap.setFont(font);
 
-            //®”—p‚ÌƒXƒ^ƒCƒ‹
+            //æ•´æ•°ç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«
             CellStyle style_int = book.createCellStyle();
             XLSXWriteTest.setBorder(style_int, BorderStyle.THIN);
             style_int.setDataFormat(format.getFormat("#,##0;-#,##0"));
             style_int.setVerticalAlignment(VerticalAlignment.TOP);
             style_int.setFont(font);
 
-            //¬”—p‚ÌƒXƒ^ƒCƒ‹
+            //å°æ•°ç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«
             CellStyle style_double = book.createCellStyle();
             XLSXWriteTest.setBorder(style_double, BorderStyle.THIN);
             style_double.setDataFormat(format.getFormat("#,##0.0;-#,##0.0"));
             style_double.setVerticalAlignment(VerticalAlignment.TOP);
             style_double.setFont(font);
 
-            //‰~•\¦—p‚ÌƒXƒ^ƒCƒ‹
+            //å††è¡¨ç¤ºç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«
             CellStyle style_yen = book.createCellStyle();
             XLSXWriteTest.setBorder(style_yen, BorderStyle.THIN);
             style_yen.setDataFormat(format.getFormat("\"\\\"#,##0;\"\\\"-#,##0"));
             style_yen.setVerticalAlignment(VerticalAlignment.TOP);
             style_yen.setFont(font);
 
-            //ƒp[ƒZƒ“ƒg•\¦—p‚ÌƒXƒ^ƒCƒ‹
+            //ãƒ‘ãƒ¼ã‚»ãƒ³ãƒˆè¡¨ç¤ºç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«
             CellStyle style_percent = book.createCellStyle();
             XLSXWriteTest.setBorder(style_percent, BorderStyle.THIN);
             style_percent.setDataFormat(format.getFormat("0.0%"));
             style_percent.setVerticalAlignment(VerticalAlignment.TOP);
             style_percent.setFont(font);
 
-            //“ú•\¦—p‚ÌƒXƒ^ƒCƒ‹
+            //æ—¥æ™‚è¡¨ç¤ºç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«
             CellStyle style_datetime = book.createCellStyle();
             XLSXWriteTest.setBorder(style_datetime, BorderStyle.THIN);
             style_datetime.setDataFormat(format.getFormat("yyyy/mm/dd hh:mm:ss"));
@@ -91,7 +91,7 @@ public class Excel01 {
             Cell cell;
             int colNumber;
 
-            //ƒV[ƒg‚Ìì¬(3ƒV[ƒgì‚Á‚Ä‚İ‚é)
+            //ã‚·ãƒ¼ãƒˆã®ä½œæˆ(3ã‚·ãƒ¼ãƒˆä½œã£ã¦ã¿ã‚‹)
             Sheet sheet;
 
             for (int i = 0; i < 3; i++) {
@@ -100,10 +100,10 @@ public class Excel01 {
                     ((SXSSFSheet) sheet).trackAllColumnsForAutoSizing();
                 }
 
-                //ƒV[ƒg–¼Ì‚Ìİ’è
-                book.setSheetName(i, "ƒV[ƒg" + (i + 1));
+                //ã‚·ãƒ¼ãƒˆåç§°ã®è¨­å®š
+                book.setSheetName(i, "ã‚·ãƒ¼ãƒˆ" + (i + 1));
 
-                //ƒwƒbƒ_s‚Ìì¬
+                //ãƒ˜ãƒƒãƒ€è¡Œã®ä½œæˆ
                 rowNumber = 0;
                 colNumber = 0;
                 row = sheet.createRow(rowNumber);
@@ -115,55 +115,55 @@ public class Excel01 {
                 cell = row.createCell(colNumber++);
                 cell.setCellStyle(style_header);
                 cell.setCellType(CellType.STRING);
-                cell.setCellValue("•¶š—ñ");
+                cell.setCellValue("æ–‡å­—åˆ—");
 
                 cell = row.createCell(colNumber++);
                 cell.setCellStyle(style_header);
                 cell.setCellType(CellType.STRING);
-                cell.setCellValue("‰üs‚Ì“ü‚Á‚½•¶š—ñ");
+                cell.setCellValue("æ”¹è¡Œã®å…¥ã£ãŸæ–‡å­—åˆ—");
 
                 cell = row.createCell(colNumber++);
                 cell.setCellStyle(style_header);
                 cell.setCellType(CellType.STRING);
-                cell.setCellValue("®”");
+                cell.setCellValue("æ•´æ•°");
 
                 cell = row.createCell(colNumber++);
                 cell.setCellStyle(style_header);
                 cell.setCellType(CellType.STRING);
-                cell.setCellValue("¬”");
+                cell.setCellValue("å°æ•°");
 
                 cell = row.createCell(colNumber++);
                 cell.setCellStyle(style_header);
                 cell.setCellType(CellType.STRING);
-                cell.setCellValue("‰~");
+                cell.setCellValue("å††");
 
                 cell = row.createCell(colNumber++);
                 cell.setCellStyle(style_header);
                 cell.setCellType(CellType.STRING);
-                cell.setCellValue("ƒp[ƒZƒ“ƒg");
+                cell.setCellValue("ãƒ‘ãƒ¼ã‚»ãƒ³ãƒˆ");
 
                 cell = row.createCell(colNumber++);
                 cell.setCellStyle(style_header);
                 cell.setCellType(CellType.STRING);
-                cell.setCellValue("“ú");
+                cell.setCellValue("æ—¥æ™‚");
 
                 cell = row.createCell(colNumber);
                 cell.setCellStyle(style_header);
                 cell.setCellType(CellType.STRING);
-                cell.setCellValue("‰~(8%‚ÌÅ)");
+                cell.setCellValue("å††(8%ã®ç¨è¾¼)");
 
-                //ƒEƒBƒ“ƒhƒE˜g‚ÌŒÅ’è
+                //ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦æ ã®å›ºå®š
                 sheet.createFreezePane(1, 1);
 
-                //ƒwƒbƒ_s‚ÉƒI[ƒgƒtƒBƒ‹ƒ^‚Ìİ’è
+                //ãƒ˜ãƒƒãƒ€è¡Œã«ã‚ªãƒ¼ãƒˆãƒ•ã‚£ãƒ«ã‚¿ã®è¨­å®š
                 sheet.setAutoFilter(new CellRangeAddress(0, 0, 0, colNumber));
 
-                //—ñ•‚Ì©“®’²®
+                //åˆ—å¹…ã®è‡ªå‹•èª¿æ•´
                 for (int j = 0; j <= colNumber; j++) {
                     sheet.autoSizeColumn(j, true);
                 }
 
-                //ƒf[ƒ^s‚Ì¶¬(10sì‚Á‚Ä‚İ‚é)
+                //ãƒ‡ãƒ¼ã‚¿è¡Œã®ç”Ÿæˆ(10è¡Œä½œã£ã¦ã¿ã‚‹)
                 for (int j = 0; j < 10; j++) {
                     rowNumber++;
                     colNumber = 0;
@@ -176,12 +176,12 @@ public class Excel01 {
                     cell = row.createCell(colNumber++);
                     cell.setCellStyle(style_string);
                     cell.setCellType(CellType.STRING);
-                    cell.setCellValue("‚±‚ê‚Í" + (j + 1) + "s–Ú‚Ìƒf[ƒ^‚Å‚·B");
+                    cell.setCellValue("ã“ã‚Œã¯" + (j + 1) + "è¡Œç›®ã®ãƒ‡ãƒ¼ã‚¿ã§ã™ã€‚");
 
                     cell = row.createCell(colNumber++);
                     cell.setCellStyle(style_string_wrap);
                     cell.setCellType(CellType.STRING);
-                    cell.setCellValue("‚±‚ê‚Í\n" + (j + 1) + "s–Ú‚Ì\nƒf[ƒ^‚Å‚·B");
+                    cell.setCellValue("ã“ã‚Œã¯\n" + (j + 1) + "è¡Œç›®ã®\nãƒ‡ãƒ¼ã‚¿ã§ã™ã€‚");
 
                     cell = row.createCell(colNumber++);
                     cell.setCellStyle(style_int);
@@ -213,17 +213,17 @@ public class Excel01 {
                     cell.setCellType(CellType.FORMULA);
                     cell.setCellFormula("ROUND(" + XLSXWriteTest.getExcelColumnString(colNumber - 3) + (rowNumber + 1) + "*1.08, 0)");
 
-                    //—ñ•‚Ì©“®’²®
+                    //åˆ—å¹…ã®è‡ªå‹•èª¿æ•´
                     for (int k = 0; k <= colNumber; k++) {
                         sheet.autoSizeColumn(k, true);
                     }
                 }
             }
 
-            //ƒV[ƒg3‚ğÁ‚µ‚Ä‚İ‚é
+            //ã‚·ãƒ¼ãƒˆ3ã‚’æ¶ˆã—ã¦ã¿ã‚‹
             book.removeSheetAt(2);
 
-            //ƒtƒ@ƒCƒ‹o—Í
+            //ãƒ•ã‚¡ã‚¤ãƒ«å‡ºåŠ›
             fout = new FileOutputStream(outputFilePath);
             book.write(fout);
         }
@@ -237,8 +237,8 @@ public class Excel01 {
             }
             if (book != null) {
                 try {
-                    // SXSSFWorkbook‚Íƒƒ‚ƒŠ‹óŠÔ‚ğß–ñ‚·‚é‘ã‚í‚è‚Éƒeƒ“ƒ|ƒ‰ƒŠƒtƒ@ƒCƒ‹‚ğ‘å—Ê‚É¶¬‚·‚é‚½‚ßA
-                    // •s—v‚É‚È‚Á‚½’iŠK‚Ådispose‚µ‚Äƒeƒ“ƒ|ƒ‰ƒŠƒtƒ@ƒCƒ‹‚ğíœ‚·‚é•K—v‚ª‚ ‚é
+                    // SXSSFWorkbookã¯ãƒ¡ãƒ¢ãƒªç©ºé–“ã‚’ç¯€ç´„ã™ã‚‹ä»£ã‚ã‚Šã«ãƒ†ãƒ³ãƒãƒ©ãƒªãƒ•ã‚¡ã‚¤ãƒ«ã‚’å¤§é‡ã«ç”Ÿæˆã™ã‚‹ãŸã‚ã€
+                    // ä¸è¦ã«ãªã£ãŸæ®µéšã§disposeã—ã¦ãƒ†ãƒ³ãƒãƒ©ãƒªãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤ã™ã‚‹å¿…è¦ãŒã‚ã‚‹
                     //
                     ((SXSSFWorkbook) book).dispose();
                     book.close();

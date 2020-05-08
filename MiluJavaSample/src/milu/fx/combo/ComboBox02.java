@@ -25,12 +25,12 @@ public class ComboBox02 extends Application {
 		List<TeamBaseBall> teamBaseBall = TeamBaseBall.createLst();
 		List<TeamSoccer>   teamSoccer   = TeamSoccer.createLst();
 		
-		// ƒ`[ƒ€ƒŠƒXƒg
+		// ãƒãƒ¼ãƒ ãƒªã‚¹ãƒˆ
 		teamList.addAll(teamBaseBall);
 		teamList.addAll(teamSoccer);
 		
-		// ƒRƒ“ƒ{ƒ{ƒbƒNƒX‚Ìƒvƒ‹ƒ_ƒEƒ“‚É•\¦‚·‚é’l‚ğ’è‹`‚·‚é
-		// ‚±‚±‚Å‚ÍAƒ`[ƒ€–¼+":"+ƒ`[ƒ€ƒ^ƒCƒv‚ğ•Ô‚·
+		// ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹ã®ãƒ—ãƒ«ãƒ€ã‚¦ãƒ³ã«è¡¨ç¤ºã™ã‚‹å€¤ã‚’å®šç¾©ã™ã‚‹
+		// ã“ã“ã§ã¯ã€ãƒãƒ¼ãƒ å+":"+ãƒãƒ¼ãƒ ã‚¿ã‚¤ãƒ—ã‚’è¿”ã™
 		this.teamComboBox.setConverter(
 			new StringConverter<TeamAbs>(){
 				@Override

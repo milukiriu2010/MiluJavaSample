@@ -14,9 +14,9 @@ import java.util.Enumeration;
 import milu.db.DriverShim;
 
 // -----------------------------------------
-// JDBC Driver‚ğƒ_ƒCƒiƒ~ƒbƒN‚Éƒ[ƒh‚·‚éƒTƒ“ƒvƒ‹
-// TNS–¼‚É‚æ‚éOracleÚ‘±
-// SQL‚ÅƒXƒL[ƒ}‚ª•Û‚µ‚Ä‚¢‚éƒe[ƒuƒ‹ˆê——‚ğæ“¾
+// JDBC Driverã‚’ãƒ€ã‚¤ãƒŠãƒŸãƒƒã‚¯ã«ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«
+// TNSåã«ã‚ˆã‚‹Oracleæ¥ç¶š
+// SQLã§ã‚¹ã‚­ãƒ¼ãƒãŒä¿æŒã—ã¦ã„ã‚‹ãƒ†ãƒ¼ãƒ–ãƒ«ä¸€è¦§ã‚’å–å¾—
 // -----------------------------------------
 public class Ora01 {
 	public static void main(String args[]){  

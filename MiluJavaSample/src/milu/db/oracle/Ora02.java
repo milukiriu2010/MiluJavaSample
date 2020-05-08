@@ -23,32 +23,32 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import milu.db.DriverShim;
 
-// ƒIƒ‰ƒNƒ‹‚Ö‚ÌÚ‘±
-// jdbc:oracle:thin:@[ƒzƒXƒg–¼|IPƒAƒhƒŒƒX]:1521/[SID|SERVICE_NAME]
+// ã‚ªãƒ©ã‚¯ãƒ«ã¸ã®æ¥ç¶š
+// jdbc:oracle:thin:@[ãƒ›ã‚¹ãƒˆå|IPã‚¢ãƒ‰ãƒ¬ã‚¹]:1521/[SID|SERVICE_NAME]
 public class Ora02 extends Application {
-	// ƒ†[ƒUID
+	// ãƒ¦ãƒ¼ã‚¶ID
 	private TextField tfUSR = new TextField("milu");
 	
-	// ƒpƒXƒ[ƒh
+	// ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 	private TextField tfPWD = new TextField("milu");
 	
 	// SID/SERVICE_NAME
 	private TextField tfSID = new TextField("");
 	
-	// ƒzƒXƒg–¼/IPƒAƒhƒŒƒX
+	// ãƒ›ã‚¹ãƒˆå/IPã‚¢ãƒ‰ãƒ¬ã‚¹
 	private TextField tfHOST = new TextField("");
 
-	// ƒ|[ƒg”Ô†
+	// ãƒãƒ¼ãƒˆç•ªå·
 	private TextField tfPORT = new TextField("1521");
 	
-	// SQL“ü—Í
+	// SQLå…¥åŠ›
 	private TextArea taSQLI = new TextArea("select * from user_tables");
 
-	// SQLŒ‹‰Ê
+	// SQLçµæœ
 	private TextArea taSQLO = new TextArea("");
 	
-	// Àsƒ{ƒ^ƒ“
-	private Button btnExec = new Button("Às");
+	// å®Ÿè¡Œãƒœã‚¿ãƒ³
+	private Button btnExec = new Button("å®Ÿè¡Œ");
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -59,25 +59,25 @@ public class Ora02 extends Application {
         grid.setHgap(10);
         grid.setPadding(new Insets(5, 5, 5, 5));
         // 
-        grid.add(new Label("ƒ†[ƒUID: "), 0, 0);
+        grid.add(new Label("ãƒ¦ãƒ¼ã‚¶ID: "), 0, 0);
         grid.add(this.tfUSR, 1, 0);
         // 
-        grid.add(new Label("ƒpƒXƒ[ƒh: "), 0, 1);
+        grid.add(new Label("ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰: "), 0, 1);
         grid.add(this.tfPWD, 1, 1);
         // 
         grid.add(new Label("SID/SERVICE_NAME: "), 0, 2);
         grid.add(this.tfSID, 1, 2);
         // 
-        grid.add(new Label("ƒzƒXƒg–¼/IPƒAƒhƒŒƒX: "), 0, 3);
+        grid.add(new Label("ãƒ›ã‚¹ãƒˆå/IPã‚¢ãƒ‰ãƒ¬ã‚¹: "), 0, 3);
         grid.add(this.tfHOST, 1, 3);
         // 
-        grid.add(new Label("ƒ|[ƒg”Ô†: "), 2, 3);
+        grid.add(new Label("ãƒãƒ¼ãƒˆç•ªå·: "), 2, 3);
         grid.add(this.tfPORT, 3, 3);
-        // SQL‚ğ“ü—Í‚·‚éƒeƒLƒXƒgƒ{ƒbƒNƒX
+        // SQLã‚’å…¥åŠ›ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹
         grid.add(this.taSQLI, 0, 4, 6, 1);
-        // SQLŒ‹‰Ê‚ğo—Í‚·‚éƒeƒLƒXƒgƒ{ƒbƒNƒX
+        // SQLçµæœã‚’å‡ºåŠ›ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹
         grid.add(this.taSQLO, 0, 5, 6, 1);
-        // Àsƒ{ƒ^ƒ“
+        // å®Ÿè¡Œãƒœã‚¿ãƒ³
         grid.add(btnExec, 0, 6, 4, 1);
         
         Group root = (Group)scene.getRoot();
@@ -87,14 +87,14 @@ public class Ora02 extends Application {
         
         
         btnExec.setOnAction((actionEvent) -> {
-        	// SQLŒ‹‰Ê‚ğƒNƒŠƒA‚·‚é
+        	// SQLçµæœã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
         	this.taSQLO.clear();
-        	// Àsƒ{ƒ^ƒ“‚ğ‰Ÿ‰º‚·‚é‚ÆASQL‚ğÀs‚µAŒ‹‰Ê‚ğ•\¦‚·‚é
+        	// å®Ÿè¡Œãƒœã‚¿ãƒ³ã‚’æŠ¼ä¸‹ã™ã‚‹ã¨ã€SQLã‚’å®Ÿè¡Œã—ã€çµæœã‚’è¡¨ç¤ºã™ã‚‹
         	execSQL();
         });
 	}
 	
-	// Àsƒ{ƒ^ƒ“‚ğ‰Ÿ‰º‚·‚é‚ÆASQL‚ğÀs‚µAŒ‹‰Ê‚ğ•\¦‚·‚é
+	// å®Ÿè¡Œãƒœã‚¿ãƒ³ã‚’æŠ¼ä¸‹ã™ã‚‹ã¨ã€SQLã‚’å®Ÿè¡Œã—ã€çµæœã‚’è¡¨ç¤ºã™ã‚‹
 	private void execSQL() {
 		try {
 			URL url = new URL("file:loader/oracle/ojdbc8.jar");
@@ -111,7 +111,7 @@ public class Ora02 extends Application {
 
 			// step2 create  the connection object
 			System.out.println( "step2" );			
-			// jdbc:oracle:thin:@[ƒzƒXƒg–¼|IPƒAƒhƒŒƒX]:1521/[SID|SERVICE_NAME]
+			// jdbc:oracle:thin:@[ãƒ›ã‚¹ãƒˆå|IPã‚¢ãƒ‰ãƒ¬ã‚¹]:1521/[SID|SERVICE_NAME]
 			Connection con = null;
 			String urljdbc = 
 					"jdbc:oracle:thin:@" + this.tfHOST.getText() + 
@@ -129,10 +129,10 @@ public class Ora02 extends Application {
 			String sql = this.taSQLI.getText().toString();
 			System.out.println("SQL["+sql+"]");
 			ResultSet rs=stmt.executeQuery(sql);
-			// SQL‚ÉŠÜ‚Ü‚ê‚éƒJƒ‰ƒ€”‚ğæ“¾‚·‚é‚½‚ß‚Ég‚¤
+			// SQLã«å«ã¾ã‚Œã‚‹ã‚«ãƒ©ãƒ æ•°ã‚’å–å¾—ã™ã‚‹ãŸã‚ã«ä½¿ã†
 			ResultSetMetaData rsmd= rs.getMetaData();
 			
-			// ‘SƒŒƒR[ƒh‚ğæ“¾
+			// å…¨ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 			StringBuffer sb = new StringBuffer();
 			while(rs.next()) {
 				for (int i=1; i<=rsmd.getColumnCount();i++) {
@@ -146,7 +146,7 @@ public class Ora02 extends Application {
 			System.out.println( "step5" );
 			con.close();
 			
-			// æ“¾‚µ‚½“à—e‚ğŒ‹‰Ê‚Éo—Í
+			// å–å¾—ã—ãŸå†…å®¹ã‚’çµæœã«å‡ºåŠ›
 			this.taSQLO.setText(sb.toString());
 		} 
 		catch ( Exception ex ) {
@@ -156,7 +156,7 @@ public class Ora02 extends Application {
 			pw.flush();
 			String str = sw.toString();
 			
-			// æ“¾‚µ‚½“à—e‚ğŒ‹‰Ê‚Éo—Í
+			// å–å¾—ã—ãŸå†…å®¹ã‚’çµæœã«å‡ºåŠ›
 			this.taSQLO.setText(str);
 		}
 	}

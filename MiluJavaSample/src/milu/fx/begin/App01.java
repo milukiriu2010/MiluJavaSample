@@ -7,13 +7,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 // --------------------------------------------------------------
-// BorderPane‚Ì—ûK
+// BorderPaneã®ç·´ç¿’
 // --------------------------------------------------------------
 // https://www.tuyano.com/index3?id=12466003&page=3
 // --------------------------------------------------------------
-// Java14‚ÅƒGƒ‰[
+// Java14ã§ã‚¨ãƒ©ãƒ¼
 // https://stackoverflow.com/questions/53035454/javafx-module-javafx-graphics
-// module-info.java‚ÉˆÈ‰º‚ğ‹Lq‚Å‰ğŒˆ
+// module-info.javaã«ä»¥ä¸‹ã‚’è¨˜è¿°ã§è§£æ±º
 // 	 exports milu.fx.begin;
 //   opens milu.fx.begin to javafx.graphics;
 //--------------------------------------------------------------

@@ -8,7 +8,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 // --------------------------------------------------------------
-// ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚ÌƒCƒxƒ“ƒg—ûK
+// ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®ã‚¤ãƒ™ãƒ³ãƒˆç·´ç¿’
 // --------------------------------------------------------------
 public class App06 extends Application {
 
@@ -22,7 +22,7 @@ public class App06 extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         label = new Label("This is JavaFX!");
-        check = new CheckBox("ƒ`ƒFƒbƒNƒ{ƒbƒNƒX");
+        check = new CheckBox("ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹");
         check.setSelected(true);
         check.setOnAction((ActionEvent)->{
             label.setText(check.isSelected() ? 

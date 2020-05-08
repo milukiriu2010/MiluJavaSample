@@ -13,8 +13,8 @@ import milu.entity.team.TeamBaseBall;
 import milu.entity.team.TeamSoccer;
 
 // -------------------------------------------
-// �E�I�u�W�F�N�g�̃��X�g��JSON�ɕϊ�
-// �EJSON�˃I�u�W�F�N�g�̃��X�g�ɕϊ�
+// ・オブジェクトのリスト⇒JSONに変換
+// ・JSON⇒オブジェクトのリストに変換
 // -------------------------------------------
 public class Gson01 {
     public static void main(String[] args) {
@@ -25,14 +25,14 @@ public class Gson01 {
         list.addAll(listBaseBall);
         list.addAll(listSoccer);
         
-        // �I�u�W�F�N�g�̃��X�g��JSON�ɕϊ�
+        // オブジェクトのリスト⇒JSONに変換
         // Gson gson = new Gson();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Type type = new TypeToken<List<TeamBaseBall>>() {}.getType();
         String json = gson.toJson(list, type);
         System.out.println(json);
         
-        // JSON�˃I�u�W�F�N�g�̃��X�g�ɕϊ�
+        // JSON⇒オブジェクトのリストに変換
         List<TeamBaseBall> fromJson = gson.fromJson(json, type);
         for (TeamBaseBall team : fromJson) {
         	System.out.println(team);

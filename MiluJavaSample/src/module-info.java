@@ -6,7 +6,7 @@ module MiluJavaSample {
 	requires javafx.controls;
 	requires javafx.fxml;
 	requires com.google.gson;
-	requires poi;
+	//requires poi;
 	//requires poi.ooxml;
 	
 	exports milu.db.oracle;
@@ -26,4 +26,16 @@ module MiluJavaSample {
 	
 	exports milu.fx.combo;
 	opens milu.fx.combo to javafx.graphics;
+	
+	exports milu.fx.cursor;
+	opens milu.fx.cursor to javafx.graphics;
+	
+	exports milu.fx.event;
+	opens milu.fx.event to javafx.graphics;	
+	
+	exports milu.fx.key;
+	opens milu.fx.key to javafx.graphics;	
+	
+	exports milu.fx.label;
+	opens milu.fx.label to javafx.graphics;	
 }

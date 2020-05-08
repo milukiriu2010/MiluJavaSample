@@ -15,7 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 // --------------------------------------------------------------
-// ƒRƒ“ƒ{ƒ{ƒbƒNƒX‚Ì—ûK
+// ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹ã®ç·´ç¿’
 // --------------------------------------------------------------
 public class ComboBox01 extends Application {
 
@@ -48,7 +48,7 @@ public class ComboBox01 extends Application {
         emailComboBox.setEditable(true);
         
         // --------------------------------------------------------------------------
-        // ˆÈ‰º‚Ì‚©‚í‚è‚Éƒ‰ƒ€ƒ_‚ğg‚¤
+        // ä»¥ä¸‹ã®ã‹ã‚ã‚Šã«ãƒ©ãƒ ãƒ€ã‚’ä½¿ã†
         // --------------------------------------------------------------------------
         // emailComboBox.valueProperty().addListener(new ChangeListener<String>() {
         //    @Override 
@@ -73,7 +73,7 @@ public class ComboBox01 extends Application {
         priorityComboBox.setValue("Normal");
         
         // ---------------
-        // ‘—Mƒ{ƒ^ƒ“‰Ÿ‰º
+        // é€ä¿¡ãƒœã‚¿ãƒ³æŠ¼ä¸‹
         // ---------------
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override

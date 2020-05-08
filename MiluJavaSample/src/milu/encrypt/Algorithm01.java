@@ -12,7 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-// サポートされているアルゴリズムの一覧を表示する
+// 繧ｵ繝昴�ｼ繝医＆繧後※縺�繧九い繝ｫ繧ｴ繝ｪ繧ｺ繝縺ｮ荳隕ｧ繧定｡ｨ遉ｺ縺吶ｋ
 // http://kaworu.jpn.org/java/%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AA%E6%9A%97%E5%8F%B7%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%82%92%E8%AA%BF%E3%81%B9%E3%82%8B
 public class Algorithm01 extends Application {
 	
