@@ -132,7 +132,7 @@ public class EncDec128 extends Application {
         return plaintext;
 	}
 	
-	public static byte[] crypt(byte[] input, MODE mode) throws Exception {
+	public static byte[] crypt(byte[] input, @SuppressWarnings("exports") MODE mode) throws Exception {
         byte[] output;
         try {
             byte[] key = ENCRYPT_KEY.getEncoded();

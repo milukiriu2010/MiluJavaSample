@@ -13,13 +13,14 @@ import java.util.Date;
 
 // 以下のエラーがでてコンパイルできない
 // Description Resource Path Location Type The package org.apache.poi.ss.usermodel is accessible from more than one module: poi, poi.ooxml
+@SuppressWarnings("unused")
 public class Excel01 {
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
+    	/*
         String outputFilePath = "out.xlsx";
         //Workbook book = null;
         FileOutputStream fout = null;
-        /*
         try {
             book = new SXSSFWorkbook();
 
@@ -256,14 +257,12 @@ public class Excel01 {
         style.setBorderTop(border);
         style.setBorderLeft(border);
         style.setBorderRight(border);
-    }
-    */
+    }*/
 
     private final static String[] LIST_ALPHA = {
         "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
     };
 
-    /*
     private static String getExcelColumnString(int column) {
         String result = "";
 
@@ -276,5 +275,4 @@ public class Excel01 {
 
         return result;
     }
-    */
 }
