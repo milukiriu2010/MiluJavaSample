@@ -20,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import milu.db.DriverShim;
 
@@ -73,15 +74,21 @@ public class Ora02 extends Application {
         // 
         grid.add(new Label("ポート番号: "), 2, 3);
         grid.add(this.tfPORT, 3, 3);
-        // SQLを入力するテキストボックス
-        grid.add(this.taSQLI, 0, 4, 6, 1);
-        // SQL結果を出力するテキストボックス
-        grid.add(this.taSQLO, 0, 5, 6, 1);
         // 実行ボタン
-        grid.add(btnExec, 0, 6, 4, 1);
+        grid.add(btnExec, 0, 4, 4, 1);
+        
+        VBox vbox = new VBox();
+        // 接続先DB情報
+        vbox.getChildren().add(grid);
+        // SQLを入力するテキストボックス
+        this.taSQLI.setPrefWidth(600);
+        vbox.getChildren().add(this.taSQLI);
+        // SQL結果を出力するテキストボックス
+        this.taSQLO.setPrefWidth(600);
+        vbox.getChildren().add(this.taSQLO);
         
         Group root = (Group)scene.getRoot();
-        root.getChildren().add(grid);
+        root.getChildren().add(vbox);
         stage.setScene(scene);
         stage.show();
         
