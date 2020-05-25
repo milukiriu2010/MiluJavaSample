@@ -27,7 +27,7 @@ module MiluJavaSample {
 	opens milu.entity.team to com.google.gson;
 	
 	exports milu.fx.begin;
-	opens milu.fx.begin to javafx.graphics;
+	opens milu.fx.begin to javafx.graphics, javafx.fxml;
 	
 	exports milu.fx.combo;
 	opens milu.fx.combo to javafx.graphics;
@@ -76,6 +76,18 @@ module MiluJavaSample {
 
 	exports milu.fx.tab;
 	opens milu.fx.tab to javafx.graphics;	
+
+	exports milu.fx.table;
+	opens milu.fx.table to javafx.graphics;	
+
+	exports milu.fx.task;
+	opens milu.fx.task to javafx.graphics;	
+
+	exports milu.fx.task.file;
+	opens milu.fx.task.file to javafx.graphics, javafx.fxml;	
+
+	exports milu.fx.text;
+	opens milu.fx.text to javafx.graphics;	
 
 	exports milu.regex;
 	opens milu.regex to javafx.graphics;	
