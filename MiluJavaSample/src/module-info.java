@@ -10,9 +10,9 @@ module MiluJavaSample {
 	requires jdk.jsobject;
 	requires transitive jsqlparser;
 	requires java.prefs;
+	requires poi;
+	requires poi.ooxml;
 	//	requires org.hibernate.orm.core;
-	//	requires poi;
-	//	requires poi.ooxml;
 	
 	exports milu.db.oracle;
 	opens milu.db.oracle to javafx.graphics;
@@ -25,6 +25,9 @@ module MiluJavaSample {
 
 	exports milu.entity.team;
 	opens milu.entity.team to com.google.gson;
+	
+	exports milu.file.gson;
+	opens milu.file.gson to javafx.graphics;
 	
 	exports milu.fx.begin;
 	opens milu.fx.begin to javafx.graphics, javafx.fxml;
@@ -88,6 +91,12 @@ module MiluJavaSample {
 
 	exports milu.fx.text;
 	opens milu.fx.text to javafx.graphics;	
+
+	exports milu.fx.tree;
+	opens milu.fx.tree to javafx.graphics;	
+
+	exports milu.fx.tree.filter;
+	opens milu.fx.tree.filter to javafx.graphics;	
 
 	exports milu.regex;
 	opens milu.regex to javafx.graphics;	
