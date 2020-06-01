@@ -14,8 +14,14 @@ module MiluJavaSample {
 	requires poi.ooxml;
 	//	requires org.hibernate.orm.core;
 	
+	exports milu.db.mysql;
+	opens milu.db.mysql to javafx.graphics;
+	
 	exports milu.db.oracle;
 	opens milu.db.oracle to javafx.graphics;
+	
+	exports milu.db.sqlserver;
+	opens milu.db.sqlserver to javafx.graphics;
 	
 	exports milu.encrypt;
 	opens milu.encrypt to javafx.graphics;	
