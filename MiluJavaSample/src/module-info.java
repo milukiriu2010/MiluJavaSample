@@ -12,6 +12,7 @@ module MiluJavaSample {
 	requires java.prefs;
 	requires poi;
 	requires poi.ooxml;
+	requires mongo.java.driver;
 	//	requires org.hibernate.orm.core;
 	
 	exports milu.db.mysql;
