@@ -1,7 +1,10 @@
 package milu.db.sqlite;
 
+import java.net.URI;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*; 
 
 
@@ -12,7 +15,18 @@ public class SQLite01 {
 		try{  
 			//step1 load the driver class
 			System.out.println( "step1" );
-			URL url = new URL("file:loader/sqlite/sqlite-jdbc-3.23.1.jar");
+			// jdk 20 deprecated
+			//URL url = new URL("file:loader/sqlite/sqlite-jdbc-3.23.1.jar");
+			//URL url = new URL("jar:file:loader/sqlite/sqlite-jdbc-3.23.1.jar!/");
+			
+			//Path path = Paths.get("loader/sqlite/sqlite-jdbc-3.23.1.jar");
+			//URI uri = path.toUri();
+			//URL url = uri.toURL();
+			
+			Path path = Paths.get("loader/sqlite/sqlite-jdbc-3.45.1.0.jar");
+			URI uri = path.toUri();
+			URL url = uri.toURL();
+			
 			System.out.println( url );
 			URL[] urls = { url };
 			URLClassLoader loader =	new URLClassLoader( urls );
@@ -30,7 +44,7 @@ public class SQLite01 {
 			System.out.println( "step2" );
 			Connection con = null;
 			String urljdbc = 
-				"jdbc:sqlite:C:\\myjava\\MiluJavaSample.git\\MiluJavaSample\\db\\sqlite\\ex1.db";
+				"jdbc:sqlite:F:\\myjava\\MiluJavaSample.git\\MiluJavaSample\\db\\sqlite\\ex1.db";
 			System.out.println( urljdbc );
 			con = DriverManager.getConnection( urljdbc );
 			

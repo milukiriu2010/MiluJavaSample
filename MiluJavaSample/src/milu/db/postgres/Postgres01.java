@@ -1,7 +1,14 @@
 package milu.db.postgres;
 
+import java.net.URI;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.Properties;
+
+import milu.db.DriverShim;
 
 // http://www.postgresqltutorial.com/postgresql-jdbc/connecting-to-postgresql-database/
 // https://www.tutorialspoint.com/postgresql/postgresql_java.htm
@@ -10,7 +17,25 @@ public class Postgres01 {
 		try {
 			//step1 load the driver class
 			System.out.println( "step1" );
-		    Class.forName("org.postgresql.Driver");
+		    //Class.forName("org.postgresql.Driver");
+			//Path path = Paths.get("loader/postgres/postgresql-42.2.4.jar");
+			Path path = Paths.get("loader/postgres/postgresql-42.7.3.jar");
+			URI uri = path.toUri();
+			URL url = uri.toURL();
+			
+			System.out.println( url );
+			URL[] urls = { url };
+			URLClassLoader loader =	new URLClassLoader( urls );
+			Driver d = 
+					(Driver)Class.forName
+					(
+						"org.postgresql.Driver", 
+						true, 
+						loader
+					).getDeclaredConstructor().newInstance();
+			DriverManager.registerDriver( new DriverShim(d) );
+			
+			
 		    
 			//step2 create  the connection object
 			System.out.println( "step2" );
@@ -19,17 +44,20 @@ public class Postgres01 {
 			if ( args.length == 0 )
 			{
 				System.out.println( "=== no arg ===" );
-			    con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miludb", "milu", "milu");
+			    //con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miludb", "milu", "milu");
+			    con = DriverManager.getConnection("jdbc:postgresql://192.168.3.29:5432/miludb", "milu", "milu");
 			}
 			else if ( "ssl".equals(args[0]) == true )
 			{
 				System.out.println( "=== ssl ===" );
-			    con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miludb?ssl=true", "milu", "milu");
+			    //con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miludb?ssl=true", "milu", "milu");
+			    con = DriverManager.getConnection("jdbc:postgresql://192.168.3.29:5432/miludb?ssl=true", "milu", "milu");
 			}
 			else if ( "embed_in_url".equals(args[0]) == true )
 			{
 				System.out.println( "=== embed_in_url ===" );
-			    con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miludb?user=milu&password=milu" );
+			    //con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miludb?user=milu&password=milu" );
+			    con = DriverManager.getConnection("jdbc:postgresql://192.168.3.29:5432/miludb?user=milu&password=milu" );
 			}
 			else if ( "properties".equals(args[0]) == true )
 			{
@@ -37,7 +65,8 @@ public class Postgres01 {
 				Properties props = new Properties();
 				props.setProperty("user", "milu");
 				props.setProperty("password", "milu");
-			    con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miludb", props );
+			    //con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miludb", props );
+			    con = DriverManager.getConnection("jdbc:postgresql://192.168.3.29:5432/miludb", props );
 			}
 			
 			
