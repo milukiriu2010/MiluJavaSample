@@ -1,36 +1,41 @@
 package milu.db.mongo;
 
-import java.sql.*;
-import java.net.URLClassLoader;
 import java.net.URL;
+import java.net.URLClassLoader;
 import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.DriverPropertyInfo;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.ArrayList;
 
 import milu.db.DriverShim;
 
-// JDBCを用いてスキーマ情報を取得する
-public class Mongo01 
-{
+public class Mongo02 {
 	public static void main( String[] args )
-	{
+	{	
 		try{  
 			//step1 load the driver class
 			System.out.println( "step1" );
 			/**/
-			//String driverPath1 = "F:\\myjava\\MiluJavaSample.git\\MiluJavaSample\\loader\\mongo\\mongo-java-driver-3.0.3.jar";
-			String driverPath1 = "F:\\myjava\\MiluJavaSample.git\\MiluJavaSample\\loader\\mongo\\mongo-java-driver-3.12.14.jar";
+			// https://www.mongodb.com/community/forums/t/cannot-connect-to-mongodb-on-localhost-using-jdbc/174010/3
+			String driverPath1 = "F:\\myjava\\MiluJavaSample.git\\MiluJavaSample\\loader\\mongo\\mongodb-jdbc-2.1.1.jar";
 			URL url1 = Paths.get(driverPath1).toUri().toURL();
 			System.out.println( url1 );
-			String driverPath2 = "F:\\myjava\\MiluJavaSample.git\\MiluJavaSample\\loader\\mongo\\mongodb_unityjdbc_free.jar";
-			URL url2 = Paths.get(driverPath2).toUri().toURL();
-			URL[] urls = { url1, url2 };
+			//String driverPath2 = "F:\\myjava\\MiluJavaSample.git\\MiluJavaSample\\loader\\mongo\\mongo-java-driver-3.12.14.jar";
+			//URL url2 = Paths.get(driverPath2).toUri().toURL();
+			//URL[] urls = { url1, url2 };
+			URL[] urls = { url1 };
 			URLClassLoader loader =	new URLClassLoader( urls );
 			Driver d = 
 					(Driver)Class.forName
 					(
-						"mongodb.jdbc.MongoDriver", 
+						"com.mongodb.jdbc.MongoDriver", 
 						true, 
 						loader
 					).getDeclaredConstructor().newInstance();
@@ -83,7 +88,7 @@ public class Mongo01
 			
 			
 			List<String> tableLst = new ArrayList<>();
-			ResultSet rs = md.getTables(null, "Northwind", "%", null);
+			ResultSet rs = md.getTables(null, "test", "%", null);
 			ResultSetMetaData rsmd = rs.getMetaData();
 			while ( rs.next() )
 			{
@@ -99,7 +104,7 @@ public class Mongo01
 			for ( String tableName : tableLst )
 			{
 				System.out.println( "    === " + tableName + " ================" );
-				//ResultSet rs2 = md.getColumns(null, "Northwind", tableName, "%" );
+				//ResultSet rs2 = md.getColumns(null, "test", tableName, "%" );
 				ResultSet rs2 = md.getColumns(null, null, tableName, "%" );
 				ResultSetMetaData rsmd2 = rs2.getMetaData();
 				while ( rs2.next() )
@@ -117,7 +122,7 @@ public class Mongo01
 			System.out.println( "=== primaryKeys ================" );
 			for ( String tableName : tableLst )
 			{
-				ResultSet rs3 = md.getPrimaryKeys(null, "Northwind", tableName );
+				ResultSet rs3 = md.getPrimaryKeys(null, "test", tableName );
 				ResultSetMetaData rsmd3 = rs3.getMetaData();
 				while ( rs3.next() )
 				{
@@ -133,7 +138,7 @@ public class Mongo01
 			System.out.println( "=== indexInfo ================" );
 			for ( String tableName : tableLst )
 			{
-				ResultSet rs4 = md.getIndexInfo(null, "Northwind", tableName, false, false );
+				ResultSet rs4 = md.getIndexInfo(null, "test", tableName, false, false );
 				ResultSetMetaData rsmd4 = rs4.getMetaData();
 				while ( rs4.next() )
 				{
@@ -145,23 +150,6 @@ public class Mongo01
 				}
 				rs4.close();
 			}
-			
-			System.out.println( "=== customers ================" );
-			String sql5 = "select CustomerID, CompanyName from customers";
-			
-			Statement stmt5 = con.createStatement();
-			
-			ResultSet rs5 = stmt5.executeQuery(sql5);
-			ResultSetMetaData meta5 = rs5.getMetaData();
-			int numColumns5 = meta5.getColumnCount();
-			while ( rs5.next() ) {
-				for ( int i = 1; i<= numColumns5; i++ ) {
-					System.out.print(rs5.getObject(i)+",");
-				}
-				System.out.println();
-			}
-			
-			
 			
 			//step5 close the connection object
 			System.out.println( "step5" );
